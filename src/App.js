@@ -5,7 +5,7 @@ function App () {
   const [quotes, setQuotes] = useState ({});
   useEffect (() => generateQuotes (), []);
   function generateQuotes () {
-    fetch ('https://arcane-brushlands-06771.herokuapp.com/quotes')
+    fetch ('https://arcane-brushlands-06771.herokuapp.com/')
       .then (response => response.json ())
       .then (data => setQuotes (data));
     console.log (quotes);
