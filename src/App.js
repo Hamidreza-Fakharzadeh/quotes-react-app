@@ -2,11 +2,11 @@ import React,{useState, useEffect} from 'react';
 import './App.css';
 
 function App () {
-  const [quotes, setQuotes] = useState ({});
+  const [quotes, setQuotes] = useState ("");
   useEffect (() => generateQuotes (), []);
   function generateQuotes () {
-    fetch ('https://cors-anywhere.herokuapp.com/' + 'https://arcane-brushlands-06771.herokuapp.com')
-      .then (response => response.json ())
+    fetch ('https://arcane-brushlands-06771.herokuapp.com')
+      .then (response => response.text ())
       .then (data => setQuotes (data));
     console.log (quotes);
   }
